@@ -1,4 +1,4 @@
-package de.syntax_institut.theveggieapp
+package de.syntax_institut.theveggieapp.ui.app
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -25,6 +25,13 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import de.syntax_institut.theveggieapp.data.viewModel.VeggieViewModel
+import de.syntax_institut.theveggieapp.navigation.BottomNavigationBar
+import de.syntax_institut.theveggieapp.navigation.FavoritesScreenRoute
+import de.syntax_institut.theveggieapp.navigation.NavigationItem
+import de.syntax_institut.theveggieapp.navigation.VeggieScreenRoute
+import de.syntax_institut.theveggieapp.ui.screens.FavoritesScreen
+import de.syntax_institut.theveggieapp.ui.screens.VeggieScreen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

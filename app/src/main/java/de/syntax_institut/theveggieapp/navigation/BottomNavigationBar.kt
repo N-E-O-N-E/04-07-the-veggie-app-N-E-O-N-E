@@ -1,4 +1,4 @@
-package de.syntax_institut.theveggieapp
+package de.syntax_institut.theveggieapp.navigation
 
 import androidx.compose.material3.Badge
 import androidx.compose.material3.BadgedBox

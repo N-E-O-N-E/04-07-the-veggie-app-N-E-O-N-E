@@ -1,4 +1,4 @@
-package de.syntax_institut.theveggieapp
+package de.syntax_institut.theveggieapp.ui.lists
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
@@ -6,6 +6,9 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import de.syntax_institut.theveggieapp.data.local.PLACEHOLDER_VEGGIE_MEALS
+import de.syntax_institut.theveggieapp.data.models.VeggieMeal
+import de.syntax_institut.theveggieapp.ui.components.VeggieMealCard
 import de.syntax_institut.theveggieapp.ui.theme.TheVeggieAppTheme
 
 @Composable
@@ -16,7 +19,7 @@ fun VeggieMealsList(
 ) {
     LazyColumn(modifier = modifier.fillMaxSize()) {
         items(veggieMeals) { veggieMeal ->
-            VeggieMealCard(veggieMeal = veggieMeal){
+            VeggieMealCard(veggieMeal = veggieMeal) {
                 markVeggieMealAsFavorite(veggieMeal)
             }
         }

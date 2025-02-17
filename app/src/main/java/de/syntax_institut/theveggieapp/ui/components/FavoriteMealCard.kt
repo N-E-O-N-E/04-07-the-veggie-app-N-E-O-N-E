@@ -1,4 +1,4 @@
-package de.syntax_institut.theveggieapp
+package de.syntax_institut.theveggieapp.ui.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -6,10 +6,8 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AddCircle
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.Icon
@@ -23,6 +21,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import de.syntax_institut.theveggieapp.data.local.PLACEHOLDER_FAVORITE_MEALS
+import de.syntax_institut.theveggieapp.data.models.FavoriteMeal
 import de.syntax_institut.theveggieapp.ui.theme.TheVeggieAppTheme
 
 @Composable

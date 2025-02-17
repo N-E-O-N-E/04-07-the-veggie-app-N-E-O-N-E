@@ -1,4 +1,4 @@
-package de.syntax_institut.theveggieapp
+package de.syntax_institut.theveggieapp.data.local
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
+import de.syntax_institut.theveggieapp.data.models.FavoriteMeal
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -13,6 +14,9 @@ interface FavoritesDao {
 
     @Insert(onConflict = OnConflictStrategy.ABORT)
     suspend fun insertFavoriteMeal(favoriteMeal: FavoriteMeal)
+
+    @Query("SELECT COUNT(*) FROM favorite_meals WHERE initId = :idMeal")
+    suspend fun isFavInMeal(idMeal: Int) : Int
 
     @Update
     suspend fun updateMeal(favoriteMeal: FavoriteMeal)

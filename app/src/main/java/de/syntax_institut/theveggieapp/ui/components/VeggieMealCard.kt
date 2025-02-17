@@ -1,4 +1,4 @@
-package de.syntax_institut.theveggieapp
+package de.syntax_institut.theveggieapp.ui.components
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -20,6 +20,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import de.syntax_institut.theveggieapp.data.local.PLACEHOLDER_VEGGIE_MEALS
+import de.syntax_institut.theveggieapp.data.models.VeggieMeal
 import de.syntax_institut.theveggieapp.ui.theme.TheVeggieAppTheme
 
 @Composable

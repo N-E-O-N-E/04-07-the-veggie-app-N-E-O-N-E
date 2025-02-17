@@ -1,4 +1,4 @@
-package de.syntax_institut.theveggieapp
+package de.syntax_institut.theveggieapp.navigation
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Fastfood

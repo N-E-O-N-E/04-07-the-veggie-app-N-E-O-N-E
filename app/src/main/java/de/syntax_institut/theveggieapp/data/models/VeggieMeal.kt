@@ -1,4 +1,4 @@
-package de.syntax_institut.theveggieapp
+package de.syntax_institut.theveggieapp.data.models
 
 data class VeggieMeal(
     val idMeal: String = "",

@@ -1,4 +1,4 @@
-package de.syntax_institut.theveggieapp
+package de.syntax_institut.theveggieapp.data.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -8,7 +8,7 @@ data class FavoriteMeal(
 
     @PrimaryKey(autoGenerate = true)
     val idMeal: Int = 0,
-
+    val initId: String,
     val mealName: String = "",
     val mealImageURL: String = ""
 )

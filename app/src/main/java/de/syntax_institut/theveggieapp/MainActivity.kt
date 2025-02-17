@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import de.syntax_institut.theveggieapp.ui.app.TheVeggieApp
 import de.syntax_institut.theveggieapp.ui.theme.TheVeggieAppTheme
 
 class MainActivity : ComponentActivity() {
