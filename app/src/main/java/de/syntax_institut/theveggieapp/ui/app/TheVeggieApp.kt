@@ -47,7 +47,7 @@ fun TheVeggieApp() {
             TopAppBar(
                 title = {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        Text("The Veggie App")
+                        Text("The Dessert App")
                         Spacer(Modifier.weight(1f))
                         Text("(${veggieMeals.size} Gerichte)", fontSize = 10.sp)
                     }

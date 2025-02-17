@@ -21,7 +21,7 @@ private val retrofit = Retrofit.Builder()
 
 interface APIService {
     @GET("filter.php")
-    suspend fun getVeggieMeals(@Query("c") category: String = "Vegetarian"): VeggieMealsResponse
+    suspend fun getVeggieMeals(@Query("c") category: String = "Dessert"): VeggieMealsResponse
 }
 
 object VeggieMealAPI {
