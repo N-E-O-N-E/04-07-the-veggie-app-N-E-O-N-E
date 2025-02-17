@@ -2,7 +2,7 @@ package de.syntax_institut.theveggieapp.data.remote
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import de.syntax_institut.theveggieapp.data.models.VeggieMealsResponse
+import de.syntax_institut.theveggieapp.data.local.VeggieMealsResponse
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET

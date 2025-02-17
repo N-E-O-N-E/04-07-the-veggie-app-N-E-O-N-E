@@ -1,6 +1,6 @@
 package de.syntax_institut.theveggieapp.data.repositorie
 
-import de.syntax_institut.theveggieapp.data.models.VeggieMealsResponse
+import de.syntax_institut.theveggieapp.data.local.VeggieMealsResponse
 import de.syntax_institut.theveggieapp.data.remote.APIService
 
 interface FavoriteMealsInterface {

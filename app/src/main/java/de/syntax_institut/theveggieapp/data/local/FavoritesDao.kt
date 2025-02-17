@@ -11,12 +11,14 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface FavoritesDao {
+    @Query("SELECT COUNT(*) FROM favorite_meals WHERE initId = :idMeal")
+    suspend fun isFavInMeal(idMeal: Int): Int
+
+    @Query("SELECT * FROM favorite_meals")
+    fun getAllFavouriteMeals(): Flow<List<FavoriteMeal>>
 
     @Insert(onConflict = OnConflictStrategy.ABORT)
     suspend fun insertFavoriteMeal(favoriteMeal: FavoriteMeal)
-
-    @Query("SELECT COUNT(*) FROM favorite_meals WHERE initId = :idMeal")
-    suspend fun isFavInMeal(idMeal: Int) : Int
 
     @Update
     suspend fun updateMeal(favoriteMeal: FavoriteMeal)
@@ -26,7 +28,4 @@ interface FavoritesDao {
 
     @Delete
     suspend fun deleteMeal(favoriteMeal: FavoriteMeal)
-
-    @Query("SELECT * FROM favorite_meals")
-    fun getAllVeggieMeals(): Flow<List<FavoriteMeal>>
 }
