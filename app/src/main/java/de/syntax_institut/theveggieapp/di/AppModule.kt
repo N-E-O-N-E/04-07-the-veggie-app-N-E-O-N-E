@@ -17,11 +17,11 @@ import org.koin.dsl.module
 
 val appModule = module {
 
-    single {
+    single<FavoritesDatabase> {
         FavoritesDatabase.getDatabase(androidContext())
     }
 
-    single {
+    single<FavoritesDao> {
         get<FavoritesDatabase>().dao()
     }
 
@@ -32,13 +32,13 @@ val appModule = module {
     single<FavoriteMealsInterface> {
         VeggieMealsRepository(
             VeggieMealAPI.retrofitService,
-            get<FavoritesDao>()
+            get()
         )
     }
 
     single<FavoriteMealsRepositoryInterface> {
         FavoriteMealsRepository(
-            get<FavoritesDao>()
+            get()
         )
     }
 
