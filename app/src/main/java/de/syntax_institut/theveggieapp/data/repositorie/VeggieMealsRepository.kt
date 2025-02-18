@@ -1,5 +1,6 @@
 package de.syntax_institut.theveggieapp.data.repositorie
 
+import de.syntax_institut.theveggieapp.data.local.FavoritesDao
 import de.syntax_institut.theveggieapp.data.local.VeggieMealsResponse
 import de.syntax_institut.theveggieapp.data.remote.APIService
 
@@ -8,7 +9,7 @@ interface FavoriteMealsInterface {
     suspend fun getVeggieMeals(): VeggieMealsResponse
 }
 
-class VeggieMealsRepository(apiService: APIService): FavoriteMealsInterface {
+class VeggieMealsRepository(apiService: APIService, get: FavoritesDao): FavoriteMealsInterface {
     override val api = apiService
 
     override suspend fun getVeggieMeals(): VeggieMealsResponse {

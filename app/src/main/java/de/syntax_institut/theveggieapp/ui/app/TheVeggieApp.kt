@@ -32,13 +32,15 @@ import de.syntax_institut.theveggieapp.navigation.NavigationItem
 import de.syntax_institut.theveggieapp.navigation.VeggieScreenRoute
 import de.syntax_institut.theveggieapp.ui.screens.FavoritesScreen
 import de.syntax_institut.theveggieapp.ui.screens.VeggieScreen
+import org.koin.androidx.compose.koinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TheVeggieApp() {
-    val mealViewModel: VeggieViewModel = viewModel()
-    val veggieMeals by mealViewModel.veggieMealsState.collectAsState()
-    val favoriteMeals by mealViewModel.getAllFavoriteMeals().collectAsState()
+fun TheVeggieApp(
+    viewModel: VeggieViewModel = koinViewModel()
+) {
+    val veggieMeals by viewModel.veggieMealsState.collectAsState()
+    val favoriteMeals by viewModel.getAllFavoriteMeals().collectAsState()
     val navController = rememberNavController()
     var selectedNavigationItem by rememberSaveable { mutableStateOf(NavigationItem.VeggieList) }
 
@@ -54,7 +56,7 @@ fun TheVeggieApp() {
                 },
                 actions = {
                     IconButton(onClick = {
-                        mealViewModel.getVeggieMeals()
+                        viewModel.getVeggieMeals()
                     }) {
                         Icon(Icons.Default.Refresh, Icons.Default.Refresh.name)
                     }
@@ -70,7 +72,7 @@ fun TheVeggieApp() {
                     VeggieScreen(
                         veggieVeggieMeals = veggieMeals,
                         markVeggieMealAsFavorite = { veggieMeal ->
-                            mealViewModel.markVeggieMealAsFavorite(veggieMeal)
+                            viewModel.markVeggieMealAsFavorite(veggieMeal)
                         },
                         modifier = Modifier
                             .padding(paddingValues)
@@ -82,7 +84,7 @@ fun TheVeggieApp() {
                     FavoritesScreen(
                         favoriteVeggieMeals = favoriteMeals,
                         removeFavoriteMeal = { favoriteMeal ->
-                            mealViewModel.removeFavoriteMeal(favoriteMeal)
+                            viewModel.removeFavoriteMeal(favoriteMeal)
                         },
                         modifier = Modifier
                             .fillMaxSize()
