@@ -25,15 +25,12 @@ val appModule = module {
         get<FavoritesDatabase>().dao()
     }
 
-    factory {
+    single {
         VeggieMealAPI.retrofitService
     }
 
     single<FavoriteMealsInterface> {
-        VeggieMealsRepository(
-            VeggieMealAPI.retrofitService,
-            get()
-        )
+        VeggieMealsRepository(get())
     }
 
     single<FavoriteMealsRepositoryInterface> {

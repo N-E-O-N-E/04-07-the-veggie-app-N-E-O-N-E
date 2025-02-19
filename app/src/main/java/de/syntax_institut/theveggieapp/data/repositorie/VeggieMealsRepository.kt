@@ -9,7 +9,7 @@ interface FavoriteMealsInterface {
     suspend fun getVeggieMeals(): VeggieMealsResponse
 }
 
-class VeggieMealsRepository(apiService: APIService, get: FavoritesDao): FavoriteMealsInterface {
+class VeggieMealsRepository(apiService: APIService): FavoriteMealsInterface {
     override val api = apiService
 
     override suspend fun getVeggieMeals(): VeggieMealsResponse {
