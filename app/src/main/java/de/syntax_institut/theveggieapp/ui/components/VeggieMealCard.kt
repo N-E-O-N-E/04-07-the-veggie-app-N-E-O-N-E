@@ -16,6 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -52,9 +53,10 @@ fun VeggieMealCard(
                     .weight(1f)
             )
             Spacer(Modifier.width(8.dp))
-            IconButton(onClick = {
-                markVeggieMealAsFavorite(veggieMeal)
-            }) {
+            IconButton(modifier = Modifier.testTag("addFavButton"),
+                onClick = {
+                    markVeggieMealAsFavorite(veggieMeal)
+                }) {
                 Icon(Icons.Default.AddCircle, Icons.Default.AddCircle.name)
             }
         }
@@ -66,6 +68,6 @@ fun VeggieMealCard(
 private fun MealCardPreview() {
     TheVeggieAppTheme {
         val placeholderMeal = PLACEHOLDER_VEGGIE_MEALS.first()
-        VeggieMealCard(veggieMeal = placeholderMeal){}
+        VeggieMealCard(veggieMeal = placeholderMeal) {}
     }
 }

@@ -4,28 +4,21 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import de.syntax_institut.theveggieapp.data.local.FavoritesDao
-import de.syntax_institut.theveggieapp.data.local.FavoritesDatabase
 import de.syntax_institut.theveggieapp.data.models.FavoriteMeal
 import de.syntax_institut.theveggieapp.data.models.VeggieMeal
-import de.syntax_institut.theveggieapp.data.remote.VeggieMealAPI
-import de.syntax_institut.theveggieapp.data.repositorie.FavoriteMealsInterface
-import de.syntax_institut.theveggieapp.data.repositorie.FavoriteMealsRepository
+import de.syntax_institut.theveggieapp.data.repositorie.VeggieMealsRepositoryInterface
 import de.syntax_institut.theveggieapp.data.repositorie.FavoriteMealsRepositoryInterface
-import de.syntax_institut.theveggieapp.data.repositorie.VeggieMealsRepository
-import de.syntax_institut.theveggieapp.di.appModule
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-import org.koin.dsl.module
 
 class VeggieViewModel(
     application: Application,
     private var favoriteMealsRepository: FavoriteMealsRepositoryInterface,
-    private var veggieMealsRepository: FavoriteMealsInterface
+    private var veggieMealsRepository: VeggieMealsRepositoryInterface
 
 ) : AndroidViewModel(application) {
     private val _veggieMealsState = MutableStateFlow<List<VeggieMeal>>(listOf())

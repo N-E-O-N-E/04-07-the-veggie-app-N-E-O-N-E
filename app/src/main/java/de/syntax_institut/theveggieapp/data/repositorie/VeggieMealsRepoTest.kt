@@ -1,17 +1,13 @@
 package de.syntax_institut.theveggieapp.data.repositorie
 
+import de.syntax_institut.theveggieapp.data.local.PLACEHOLDER_VEGGIE_MEALS
 import de.syntax_institut.theveggieapp.data.local.VeggieMealsResponse
 import de.syntax_institut.theveggieapp.data.remote.APIService
 
-interface VeggieMealsRepositoryInterface {
-    val api: APIService
-    suspend fun getVeggieMeals(): VeggieMealsResponse
-}
-
-class VeggieMealsRepository(apiService: APIService): VeggieMealsRepositoryInterface {
+class VeggieMealsRepoTest(apiService: APIService) : VeggieMealsRepositoryInterface {
     override val api = apiService
 
     override suspend fun getVeggieMeals(): VeggieMealsResponse {
-        return api.getVeggieMeals()
+        return VeggieMealsResponse(PLACEHOLDER_VEGGIE_MEALS)
     }
 }

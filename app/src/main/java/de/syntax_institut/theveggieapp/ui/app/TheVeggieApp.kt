@@ -20,6 +20,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
@@ -51,13 +52,13 @@ fun TheVeggieApp(
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text("The Dessert App")
                         Spacer(Modifier.weight(1f))
-                        Text("(${veggieMeals.size} Gerichte)", fontSize = 10.sp)
+                        Text("(${veggieMeals.size} Gerichte)", fontSize = 13.sp, modifier = Modifier.testTag("mealsText"))
                     }
                 },
                 actions = {
                     IconButton(onClick = {
                         viewModel.getVeggieMeals()
-                    }) {
+                    }, modifier = Modifier.testTag("refreshButton")) {
                         Icon(Icons.Default.Refresh, Icons.Default.Refresh.name)
                     }
                 }
