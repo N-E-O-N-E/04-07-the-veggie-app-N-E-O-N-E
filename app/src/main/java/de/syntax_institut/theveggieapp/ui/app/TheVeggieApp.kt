@@ -22,7 +22,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -41,15 +40,15 @@ import org.koin.androidx.compose.koinViewModel
  * Die Funktion verwendet ein Scaffold, um einen einheitlichen Aufbau mit einem TopAppBar, einem
  * NavHost-basierten Content-Bereich und einer BottomNavigationBar bereitzustellen. Es wird zwischen
  * zwei Routen navigiert: einer Liste der vegetarischen Mahlzeiten ([VeggieScreen]) und einer Liste der
- * Favoriten ([FavoritesScreen]). Die Navigation erfolgt über einen [NavController] und einen lokal
- * verwalteten Zustand ([selectedNavigationItem]).
+ * Favoriten ([FavoritesScreen]). Die Navigation erfolgt über einen NavController und einen lokal
+ * verwalteten Zustand (selectedNavigationItem).
  *
  * Im TopAppBar wird der Titel der App sowie die Anzahl der verfügbaren Mahlzeiten angezeigt. Zudem
  * gibt es einen Refresh-Button, der beim Anklicken die Neuladung der Mahlzeiten über den ViewModel-Callback
- * [viewModel.getVeggieMeals] triggert.
+ * viewModel.getVeggieMeals triggert.
  *
- * Die Funktion beobachtet den Zustand der vegetarischen Mahlzeiten ([veggieMeals]) und der Favoriten
- * ([favoriteMeals]) aus dem [VeggieViewModel].
+ * Die Funktion beobachtet den Zustand der vegetarischen Mahlzeiten (veggieMeals) und der Favoriten
+ * (favoriteMeals) aus dem [VeggieViewModel].
  *
  * @param viewModel Das [VeggieViewModel], das den Zustand der App (z. B. die Listen der Mahlzeiten und Favoriten)
  *                  bereitstellt und Logik wie das Abrufen und Aktualisieren der Daten handhabt. Standardmäßig wird
@@ -73,7 +72,11 @@ fun TheVeggieApp(
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text("The Dessert App")
                         Spacer(Modifier.weight(1f))
-                        Text("(${veggieMeals.size} Gerichte)", fontSize = 13.sp, modifier = Modifier.testTag("mealsText"))
+                        Text(
+                            "(${veggieMeals.size} Gerichte)",
+                            fontSize = 13.sp,
+                            modifier = Modifier.testTag("mealsText")
+                        )
                     }
                 },
                 actions = {
