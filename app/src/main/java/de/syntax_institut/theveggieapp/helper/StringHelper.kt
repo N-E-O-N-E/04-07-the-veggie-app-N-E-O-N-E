@@ -19,9 +19,3 @@ fun String.shortText(): String {
     return this.take(20) + "..."
 }
 
-fun main() {
-    println(StringHelper.shortenText("Das ist ein sehr langer Text zum Testen der Funktion"))
-    val testtext = "Das ist ein sehr langer Text zum Testen der Funktion"
-    println(testtext.shortText())
-}
-

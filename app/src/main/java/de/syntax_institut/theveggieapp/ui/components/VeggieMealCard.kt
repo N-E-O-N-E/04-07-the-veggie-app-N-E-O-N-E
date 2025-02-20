@@ -44,8 +44,6 @@ fun VeggieMealCard(
     markVeggieMealAsFavorite: (VeggieMeal) -> Unit,
 ) {
 
-    val veggieMealTitleShort = shortenText(veggieMeal.strMeal)
-
     ElevatedCard(
         modifier = modifier
             .fillMaxWidth()
@@ -61,7 +59,8 @@ fun VeggieMealCard(
             )
             Spacer(Modifier.width(8.dp))
             Text(
-                text = veggieMealTitleShort,
+                text = shortenText(veggieMeal.strMeal),
+                //text = veggieMeal.strMeal.shortText(),
                 fontWeight = FontWeight.Normal,
                 modifier = Modifier
                     .padding(12.dp)

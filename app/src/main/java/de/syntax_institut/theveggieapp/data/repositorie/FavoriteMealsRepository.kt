@@ -101,6 +101,7 @@ class FavoriteMealsRepository(
      *
      * @param favoriteMeal Das [FavoriteMeal]-Objekt mit den aktualisierten Daten.
      */
+
     override suspend fun updateMeal(favoriteMeal: FavoriteMeal) {
         dao.updateMeal(favoriteMeal)
     }

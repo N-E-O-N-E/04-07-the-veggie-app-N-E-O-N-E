@@ -7,16 +7,17 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.10.0"
-composeBom = "2024.04.01"
-moshiVersion = "1.15.0"
-retrofitVersion = "2.9.0"
+composeBom = "2025.02.00"
+moshiVersion = "1.15.2"
+retrofitVersion = "2.11.0"
 roomRuntime = "2.6.1"
 kspVersion = "2.0.21-1.0.27"
-coilCompose = "3.0.0-rc02"
-kotlinxSerializationJson = "1.7.3"
-materialIconsExtended = "1.7.6"
-navigationCompose = "2.8.5"
+coilCompose = "3.1.0"
+kotlinxSerializationJson = "1.8.0"
+materialIconsExtended = "1.7.8"
+navigationCompose = "2.8.7"
 koinBom = "4.1.0-Beta4"
+dokka = "2.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -56,4 +57,6 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-ksp = {id = "com.google.devtools.ksp", version.ref = "kspVersion"}
 jetbrains-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+jetbrains-dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+
 
