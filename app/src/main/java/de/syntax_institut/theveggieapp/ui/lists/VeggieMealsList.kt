@@ -11,6 +11,18 @@ import de.syntax_institut.theveggieapp.data.models.VeggieMeal
 import de.syntax_institut.theveggieapp.ui.components.VeggieMealCard
 import de.syntax_institut.theveggieapp.ui.theme.TheVeggieAppTheme
 
+/**
+ * Stellt eine Liste von vegetarischen Mahlzeiten dar.
+ *
+ * Diese Composable-Funktion nutzt eine [LazyColumn], um eine Liste von [VeggieMeal]-Objekten anzuzeigen.
+ * Für jede Mahlzeit wird ein [VeggieMealCard] gerendert, welches über den [markVeggieMealAsFavorite]-Callback
+ * die Möglichkeit bietet, eine Mahlzeit als Favorit zu markieren.
+ *
+ * @param veggieMeals Eine Liste von [VeggieMeal]-Objekten, die angezeigt werden sollen.
+ * @param modifier Ein [Modifier] zur Anpassung des Layouts der Liste.
+ * @param markVeggieMealAsFavorite Callback-Funktion, die ausgeführt wird, wenn eine Mahlzeit als Favorit markiert wird.
+ */
+
 @Composable
 fun VeggieMealsList(
     veggieMeals: List<VeggieMeal>,
@@ -25,6 +37,7 @@ fun VeggieMealsList(
         }
     }
 }
+
 
 @Preview
 @Composable

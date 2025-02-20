@@ -10,6 +10,23 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 
+/**
+ * Stellt die untere Navigationsleiste der App dar.
+ *
+ * Diese Composable-Funktion rendert eine [NavigationBar] mit den übergebenen Navigationspunkten. Für jeden
+ * Navigationspunkt wird ein [NavigationBarItem] erzeugt, das:
+ * - einen ausgewählten Zustand basierend auf [selectedNavItem] besitzt,
+ * - beim Klick die [onNavItemSelection]-Callback-Funktion aufruft,
+ * - ein Icon anzeigt, das in einem [BadgedBox] eingebettet ist, um bei Bedarf (wenn es sich um den Favoriten-Item handelt
+ *   und [favoritesCount] größer als 0 ist) einen Badge mit der Anzahl der Favoriten anzuzeigen,
+ * - ein Label mit dem Namen des Navigationspunkts darstellt.
+ *
+ * @param navItems Eine Liste von [NavigationItem], die die möglichen Navigationspunkte repräsentiert.
+ * @param onNavItemSelection Callback-Funktion, die aufgerufen wird, wenn ein Navigationspunkt ausgewählt wird.
+ * @param selectedNavItem Der aktuell ausgewählte Navigationspunkt.
+ * @param favoritesCount Die Anzahl der Favoriten, die als Badge beim Favoriten-Navigationspunkt angezeigt wird.
+ */
+
 @Composable
 fun BottomNavigationBar(
     navItems: List<NavigationItem>,

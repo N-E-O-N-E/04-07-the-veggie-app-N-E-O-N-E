@@ -35,6 +35,27 @@ import de.syntax_institut.theveggieapp.ui.screens.FavoritesScreen
 import de.syntax_institut.theveggieapp.ui.screens.VeggieScreen
 import org.koin.androidx.compose.koinViewModel
 
+/**
+ * Die Haupt-Composable-Funktion der App, welche das Grundlayout und die Navigation der Anwendung definiert.
+ *
+ * Die Funktion verwendet ein Scaffold, um einen einheitlichen Aufbau mit einem TopAppBar, einem
+ * NavHost-basierten Content-Bereich und einer BottomNavigationBar bereitzustellen. Es wird zwischen
+ * zwei Routen navigiert: einer Liste der vegetarischen Mahlzeiten ([VeggieScreen]) und einer Liste der
+ * Favoriten ([FavoritesScreen]). Die Navigation erfolgt über einen [NavController] und einen lokal
+ * verwalteten Zustand ([selectedNavigationItem]).
+ *
+ * Im TopAppBar wird der Titel der App sowie die Anzahl der verfügbaren Mahlzeiten angezeigt. Zudem
+ * gibt es einen Refresh-Button, der beim Anklicken die Neuladung der Mahlzeiten über den ViewModel-Callback
+ * [viewModel.getVeggieMeals] triggert.
+ *
+ * Die Funktion beobachtet den Zustand der vegetarischen Mahlzeiten ([veggieMeals]) und der Favoriten
+ * ([favoriteMeals]) aus dem [VeggieViewModel].
+ *
+ * @param viewModel Das [VeggieViewModel], das den Zustand der App (z. B. die Listen der Mahlzeiten und Favoriten)
+ *                  bereitstellt und Logik wie das Abrufen und Aktualisieren der Daten handhabt. Standardmäßig wird
+ *                  über Koin eine Instanz abgerufen.
+ */
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TheVeggieApp(

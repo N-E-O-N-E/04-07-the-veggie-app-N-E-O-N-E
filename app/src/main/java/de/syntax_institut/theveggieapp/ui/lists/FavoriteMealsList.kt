@@ -11,6 +11,18 @@ import de.syntax_institut.theveggieapp.data.models.FavoriteMeal
 import de.syntax_institut.theveggieapp.ui.components.FavoriteMealCard
 import de.syntax_institut.theveggieapp.ui.theme.TheVeggieAppTheme
 
+/**
+ * Stellt eine Liste der Favoriten (vegetarische Mahlzeiten) dar.
+ *
+ * Diese Composable-Funktion verwendet eine [LazyColumn], um die übergebene Liste von [FavoriteMeal]-Objekten anzuzeigen.
+ * Für jede Mahlzeit wird ein [FavoriteMealCard] gerendert, das über den [deleteFavoriteMeal]-Callback die Möglichkeit bietet,
+ * den Favoriten aus der Liste zu entfernen.
+ *
+ * @param favoriteMeals Eine Liste von [FavoriteMeal]-Objekten, die als Favoriten angezeigt werden sollen.
+ * @param modifier Ein [Modifier] zur Anpassung des Layouts der Liste.
+ * @param deleteFavoriteMeal Callback-Funktion, die ausgeführt wird, wenn ein Favorit entfernt werden soll.
+ */
+
 @Composable
 fun FavoriteMealsList(
     favoriteMeals: List<FavoriteMeal>,

@@ -23,14 +23,29 @@ import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import de.syntax_institut.theveggieapp.data.local.PLACEHOLDER_VEGGIE_MEALS
 import de.syntax_institut.theveggieapp.data.models.VeggieMeal
+import de.syntax_institut.theveggieapp.helper.StringHelper.shortenText
 import de.syntax_institut.theveggieapp.ui.theme.TheVeggieAppTheme
+
+/**
+ * Stellt eine Karte dar, die Informationen zu einer vegetarischen Mahlzeit anzeigt.
+ *
+ * Die Karte zeigt ein Bild der Mahlzeit, den gekürzten Namen der Mahlzeit sowie einen Button zum
+ * Hinzufügen der Mahlzeit als Favorit. Beim Klick auf den Button wird der [markVeggieMealAsFavorite]-Callback ausgelöst.
+ *
+ * @param modifier Ein [Modifier] zur Anpassung des Layouts der Karte.
+ * @param veggieMeal Ein [VeggieMeal]-Objekt, das die Daten der Mahlzeit enthält.
+ * @param markVeggieMealAsFavorite Callback-Funktion, die ausgeführt wird, wenn die Mahlzeit als Favorit markiert werden soll.
+ */
 
 @Composable
 fun VeggieMealCard(
     modifier: Modifier = Modifier,
     veggieMeal: VeggieMeal,
-    markVeggieMealAsFavorite: (VeggieMeal) -> Unit
+    markVeggieMealAsFavorite: (VeggieMeal) -> Unit,
 ) {
+
+    val veggieMealTitleShort = shortenText(veggieMeal.strMeal)
+
     ElevatedCard(
         modifier = modifier
             .fillMaxWidth()
@@ -46,7 +61,7 @@ fun VeggieMealCard(
             )
             Spacer(Modifier.width(8.dp))
             Text(
-                text = veggieMeal.strMeal,
+                text = veggieMealTitleShort,
                 fontWeight = FontWeight.Normal,
                 modifier = Modifier
                     .padding(12.dp)

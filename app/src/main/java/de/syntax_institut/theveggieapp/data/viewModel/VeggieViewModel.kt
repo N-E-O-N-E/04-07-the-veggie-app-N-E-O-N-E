@@ -1,5 +1,6 @@
 package de.syntax_institut.theveggieapp.data.viewModel
 
+import FavoriteMealsRepositoryInterface
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
@@ -7,13 +8,24 @@ import androidx.lifecycle.viewModelScope
 import de.syntax_institut.theveggieapp.data.models.FavoriteMeal
 import de.syntax_institut.theveggieapp.data.models.VeggieMeal
 import de.syntax_institut.theveggieapp.data.repositorie.VeggieMealsRepositoryInterface
-import de.syntax_institut.theveggieapp.data.repositorie.FavoriteMealsRepositoryInterface
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+
+/**
+ * Das ViewModel, das die Geschäftslogik und den Zustand für die Darstellung der vegetarischen Mahlzeiten und Favoriten verwaltet.
+ *
+ * Diese Klasse erweitert [AndroidViewModel] und nutzt [VeggieMealsRepositoryInterface] und
+ * [FavoriteMealsRepositoryInterface] zur Datenbeschaffung und -verwaltung. Sie stellt außerdem Methoden bereit,
+ * um vegetarische Mahlzeiten abzurufen, als Favoriten zu markieren bzw. zu entfernen sowie den aktuellen Stand der Favoriten zu beobachten.
+ *
+ * @param application Die Application-Instanz, die für den AndroidViewModel-Konstruktor benötigt wird.
+ * @param favoriteMealsRepository Repository für Operationen mit favorisierten Mahlzeiten.
+ * @param veggieMealsRepository Repository für den Abruf der vegetarischen Mahlzeiten.
+ */
 
 class VeggieViewModel(
     application: Application,

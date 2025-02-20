@@ -25,6 +25,17 @@ import de.syntax_institut.theveggieapp.data.local.PLACEHOLDER_FAVORITE_MEALS
 import de.syntax_institut.theveggieapp.data.models.FavoriteMeal
 import de.syntax_institut.theveggieapp.ui.theme.TheVeggieAppTheme
 
+/**
+ * Stellt eine Karte dar, die Informationen zu einem favorisierten vegetarischen Gericht anzeigt.
+ *
+ * Die Karte zeigt ein Bild des Gerichts sowie den Namen des Gerichts in einer Spalte. Ein IconButton ermöglicht
+ * das Entfernen des Gerichts aus der Favoritenliste, indem der [markVeggieMealAsFavorite]-Callback aufgerufen wird.
+ *
+ * @param modifier Ein [Modifier] zur Anpassung des Layouts der Karte.
+ * @param favoriteMeal Ein [FavoriteMeal]-Objekt, das die Daten des favorisierten Gerichts enthält.
+ * @param markVeggieMealAsFavorite Callback-Funktion, die ausgeführt wird, wenn der Favorit entfernt werden soll.
+ */
+
 @Composable
 fun FavoriteMealCard(
     modifier: Modifier = Modifier,
